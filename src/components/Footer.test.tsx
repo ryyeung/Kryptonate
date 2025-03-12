@@ -13,7 +13,7 @@ describe('Footer', () => {
   it('renders the footer component', () => {
     render(<Footer />);
 
-    expect(screen.getByText(/Built with love by/i)).toBeInTheDocument();
+    expect(screen.getByText(/Built with love by Kryptonate/i)).toBeInTheDocument();
 
     const onchainKitLink = screen.getByTitle('OnchainKit');
     expect(onchainKitLink).toBeInTheDocument();
