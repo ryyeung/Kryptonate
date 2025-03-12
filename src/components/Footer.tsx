@@ -24,13 +24,12 @@ export default function Footer() {
         <h3 className="mr-2 mb-2 text-m md:mb-0">
           Built with love by{' '}
           <a
-            href={ONCHAINKIT_LINK}
             target="_blank"
             rel="noreferrer"
-            title="OnchainKit"
+            title="Kryptonate"
             className="font-semibold hover:text-indigo-600"
           >
-            OnchainKit
+            Kryptonate
           </a>
         </h3>
       </aside>
