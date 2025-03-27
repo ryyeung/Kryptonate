@@ -1,24 +1,21 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
 model Fundraiser {
-  id            String   @id @default(cuid())
+  id            String     @id @default(cuid())
   title         String
   description   String
   walletAddress String
   imageUrl      String
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
   donations     Donation[]
 }
 
@@ -26,7 +23,7 @@ model Donation {
   id           String     @id @default(cuid())
   amount       Float
   donorAddress String
-  fundraiser   Fundraiser @relation(fields: [fundraiserId], references: [id])
   fundraiserId String
   createdAt    DateTime   @default(now())
-} 
+  fundraiser   Fundraiser @relation(fields: [fundraiserId], references: [id])
+}

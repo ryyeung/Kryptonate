@@ -38,7 +38,7 @@ export default function Page() {
           <div className="flex items-center gap-3">
             <Link
               href="/fundraisers"
-              className="px-4 py-2 bg-indigo-100 text-indigo-600 rounded-md hover:bg-indigo-200 transition-colors duration-200"
+              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors duration-200"
             >
               View Fundraisers
             </Link>
