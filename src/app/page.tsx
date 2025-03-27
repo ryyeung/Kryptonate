@@ -8,6 +8,7 @@ import OnchainkitSvg from 'src/svg/OnchainkitSvg';
 import LoginButton from '../components/LoginButton';
 import SignupButton from '../components/SignupButton';
 import HeroSection from './HeroSection';
+import Link from 'next/link';
 
 export default function Page() {
   const { address } = useAccount();
@@ -34,8 +35,13 @@ export default function Page() {
           </a> */}
           <span className="font-semibold text-2xl text-indigo-600">Kryptonate</span>
 
-
           <div className="flex items-center gap-3">
+            <Link
+              href="/fundraisers"
+              className="px-4 py-2 bg-indigo-100 text-indigo-600 rounded-md hover:bg-indigo-200 transition-colors duration-200"
+            >
+              View Fundraisers
+            </Link>
             <SignupButton />
             {!address && <LoginButton />}
           </div>
