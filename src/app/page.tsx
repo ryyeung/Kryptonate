@@ -10,6 +10,8 @@ import SignupButton from '../components/SignupButton';
 import HeroSection from './HeroSection';
 import Link from 'next/link';
 
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
+
 export default function Page() {
   const { address } = useAccount();
   //Add a header class in b/t HeroSection, Add Logo
@@ -42,8 +44,10 @@ export default function Page() {
             >
               View Fundraisers
             </Link>
-            <SignupButton />
-            {!address && <LoginButton />}
+            {/* <SignupButton /> */}
+            <LoginLink>Sign in</LoginLink>
+            <RegisterLink>Sign up</RegisterLink>
+            {!address && <LoginButton />} 
           </div>
       </div>
       </section>

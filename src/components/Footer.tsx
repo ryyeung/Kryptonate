@@ -8,6 +8,7 @@ import {
   TWITTER_LINK,
 } from '../links';
 import ArrowSvg from '../svg/ArrowSvg';
+import { RegisterLink, LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 const docLinks = [
   { href: ONCHAINKIT_LINK, title: 'Docs' },
@@ -48,6 +49,18 @@ export default function Footer() {
             </a>
           </li>
         ))}
+        <li className="flex">
+          <LoginLink className="flex items-center gap-1">
+            <p>Sign in</p>
+            <ArrowSvg />
+          </LoginLink>
+        </li>
+        <li className="flex">
+          <RegisterLink className="flex items-center gap-1">
+            <p>Sign up</p>
+            <ArrowSvg />
+          </RegisterLink>
+        </li>
       </ul>
     </section>
   );
