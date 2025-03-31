@@ -47,7 +47,8 @@ export default function Page() {
             {/* <SignupButton /> */}
             <LoginLink>Sign in</LoginLink>
             <RegisterLink>Sign up</RegisterLink>
-            {!address && <LoginButton />} 
+            {/* {!address && <LoginButton />}  */}
+            {<LoginButton />} 
           </div>
       </div>
       </section>
