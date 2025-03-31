@@ -17,6 +17,11 @@ model Fundraiser {
   createdAt     DateTime   @default(now())
   updatedAt     DateTime   @updatedAt
   donations     Donation[]
+  goal          Float      @default(0)
+  raised        Float      @default(0)
+  category      String     @default("General")
+  organizer     String     @default("Anonymous")
+  isActive      Boolean    @default(true)
 }
 
 model Donation {
@@ -26,4 +31,4 @@ model Donation {
   fundraiserId String
   createdAt    DateTime   @default(now())
   fundraiser   Fundraiser @relation(fields: [fundraiserId], references: [id])
-}
+} 

@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '../../../lib/prisma';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 export async function GET() {
   try {
@@ -23,12 +25,24 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { title, description, walletAddress, imageUrl } = body;
 
+    if (!title || !description || !walletAddress || !imageUrl) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
+
     const fundraiser = await prisma.fundraiser.create({
       data: {
         title,
         description,
         walletAddress,
         imageUrl,
+        goal: 0, // Default goal
+        raised: 0, // Initial raised amount
+        category: 'General', // Default category
+        organizer: 'Anonymous', // Default organizer
+        isActive: true,
       },
     });
 
